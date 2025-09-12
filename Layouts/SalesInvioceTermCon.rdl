@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="InvoiceNo">
+          <DataField>InvoiceNo</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="ExternalDocNo">
+          <DataField>ExternalDocNo</DataField>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+        </Field>
+        <Field Name="BillToName">
+          <DataField>BillToName</DataField>
+        </Field>
+        <Field Name="BillToAddress">
+          <DataField>BillToAddress</DataField>
+        </Field>
+        <Field Name="BillToCity">
+          <DataField>BillToCity</DataField>
+        </Field>
+        <Field Name="BillToPostCode">
+          <DataField>BillToPostCode</DataField>
+        </Field>
+        <Field Name="BillToGSTIN">
+          <DataField>BillToGSTIN</DataField>
+        </Field>
+        <Field Name="ShipToName">
+          <DataField>ShipToName</DataField>
+        </Field>
+        <Field Name="ShipToAddress">
+          <DataField>ShipToAddress</DataField>
+        </Field>
+        <Field Name="ShipToCity">
+          <DataField>ShipToCity</DataField>
+        </Field>
+        <Field Name="ShipToPostCode">
+          <DataField>ShipToPostCode</DataField>
+        </Field>
+        <Field Name="SellerName">
+          <DataField>SellerName</DataField>
+        </Field>
+        <Field Name="SellerAddress">
+          <DataField>SellerAddress</DataField>
+        </Field>
+        <Field Name="SellerGSTIN">
+          <DataField>SellerGSTIN</DataField>
+        </Field>
+        <Field Name="SellerPAN">
+          <DataField>SellerPAN</DataField>
+        </Field>
+        <Field Name="SellerFSSAI">
+          <DataField>SellerFSSAI</DataField>
+        </Field>
+        <Field Name="SellerCIN">
+          <DataField>SellerCIN</DataField>
+        </Field>
+        <Field Name="SubTotal">
+          <DataField>SubTotal</DataField>
+        </Field>
+        <Field Name="SubTotalFormat">
+          <DataField>SubTotalFormat</DataField>
+        </Field>
+        <Field Name="TotalTaxable">
+          <DataField>TotalTaxable</DataField>
+        </Field>
+        <Field Name="TotalTaxableFormat">
+          <DataField>TotalTaxableFormat</DataField>
+        </Field>
+        <Field Name="TotalCGST">
+          <DataField>TotalCGST</DataField>
+        </Field>
+        <Field Name="TotalCGSTFormat">
+          <DataField>TotalCGSTFormat</DataField>
+        </Field>
+        <Field Name="TotalSGST">
+          <DataField>TotalSGST</DataField>
+        </Field>
+        <Field Name="TotalSGSTFormat">
+          <DataField>TotalSGSTFormat</DataField>
+        </Field>
+        <Field Name="TotalIGST">
+          <DataField>TotalIGST</DataField>
+        </Field>
+        <Field Name="TotalIGSTFormat">
+          <DataField>TotalIGSTFormat</DataField>
+        </Field>
+        <Field Name="GrandTotal">
+          <DataField>GrandTotal</DataField>
+        </Field>
+        <Field Name="GrandTotalFormat">
+          <DataField>GrandTotalFormat</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="HSN">
+          <DataField>HSN</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+        </Field>
+        <Field Name="UnitPriceFormat">
+          <DataField>UnitPriceFormat</DataField>
+        </Field>
+        <Field Name="LineAmount">
+          <DataField>LineAmount</DataField>
+        </Field>
+        <Field Name="LineAmountFormat">
+          <DataField>LineAmountFormat</DataField>
+        </Field>
+        <Field Name="LineDiscPct">
+          <DataField>LineDiscPct</DataField>
+        </Field>
+        <Field Name="LineDiscPctFormat">
+          <DataField>LineDiscPctFormat</DataField>
+        </Field>
+        <Field Name="LineDiscAmt">
+          <DataField>LineDiscAmt</DataField>
+        </Field>
+        <Field Name="LineDiscAmtFormat">
+          <DataField>LineDiscAmtFormat</DataField>
+        </Field>
+        <Field Name="CGSTPct">
+          <DataField>CGSTPct</DataField>
+        </Field>
+        <Field Name="CGSTPctFormat">
+          <DataField>CGSTPctFormat</DataField>
+        </Field>
+        <Field Name="CGSTAmt">
+          <DataField>CGSTAmt</DataField>
+        </Field>
+        <Field Name="CGSTAmtFormat">
+          <DataField>CGSTAmtFormat</DataField>
+        </Field>
+        <Field Name="SGSTPct">
+          <DataField>SGSTPct</DataField>
+        </Field>
+        <Field Name="SGSTPctFormat">
+          <DataField>SGSTPctFormat</DataField>
+        </Field>
+        <Field Name="SGSTAmt">
+          <DataField>SGSTAmt</DataField>
+        </Field>
+        <Field Name="SGSTAmtFormat">
+          <DataField>SGSTAmtFormat</DataField>
+        </Field>
+        <Field Name="IGSTPct">
+          <DataField>IGSTPct</DataField>
+        </Field>
+        <Field Name="IGSTPctFormat">
+          <DataField>IGSTPctFormat</DataField>
+        </Field>
+        <Field Name="IGSTAmt">
+          <DataField>IGSTAmt</DataField>
+        </Field>
+        <Field Name="IGSTAmtFormat">
+          <DataField>IGSTAmtFormat</DataField>
+        </Field>
+        <Field Name="TaxableValue">
+          <DataField>TaxableValue</DataField>
+        </Field>
+        <Field Name="TaxableValueFormat">
+          <DataField>TaxableValueFormat</DataField>
+        </Field>
+        <Field Name="LineTotalValue">
+          <DataField>LineTotalValue</DataField>
+        </Field>
+        <Field Name="LineTotalValueFormat">
+          <DataField>LineTotalValueFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
