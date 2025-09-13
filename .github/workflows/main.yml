@@ -15,7 +15,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Run AL-Go Build
-      uses: microsoft/AL-Go@main
-      with:
-        doNotPublishApps: true
+    - name: Build AL Project
+      shell: pwsh
+      run: |
+        Invoke-WebRequest https://raw.githubusercontent.com/microsoft/AL-Go/main/scripts/Run-AlPipeline.ps1 -OutFile Run-AlPipeline.ps1
+        .\Run-AlPipeline.ps1 `
+          -type Build `
+          -countryCode W1 `
+          -doNotPublishApps `
+          -installApps `
+          -installTestApps
