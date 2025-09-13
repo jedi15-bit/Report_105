@@ -1,0 +1,21 @@
+name: AL CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Run AL-Go Build
+      uses: microsoft/AL-Go@main
+      with:
+        doNotPublishApps: true
